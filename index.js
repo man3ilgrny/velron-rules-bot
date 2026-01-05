@@ -66,14 +66,10 @@ client.on('interactionCreate', async interaction => {
   if (!interaction.isStringSelectMenu()) return;
   if (interaction.customId !== 'rules_categories') return;
 
-  // ✅ حل مشكلة This interaction failed
   await interaction.deferReply({ ephemeral: true });
 
   let embed;
 
-  // ===============================
-  // القوانين الرئيسية
-  // ===============================
   if (interaction.values[0] === 'general') {
     embed = new EmbedBuilder()
       .setTitle('📘 القوانين الرئيسية')
@@ -100,12 +96,7 @@ client.on('interactionCreate', async interaction => {
 19. يجب تقدير حياتك عند التهديد.
 20. يمنع الخروج من السيرفر أثناء السيناريو.`
       );
-  }
-
-  // ===============================
-  // قوانين الإجرام
-  // ===============================
-  else if (interaction.values[0] === 'crime') {
+  } else if (interaction.values[0] === 'crime') {
     embed = new EmbedBuilder()
       .setTitle('🚓 قوانين الإجرام')
       .setColor(0x2b2d31)
@@ -119,12 +110,7 @@ client.on('interactionCreate', async interaction => {
 7. يمنع الإجرام داخل المناطق الآمنة.
 8. يمنع بيع أو الإعلان عن الممنوعات بالمناطق الآمنة.`
       );
-  }
-
-  // ===============================
-  // المناطق الآمنة
-  // ===============================
-  else if (interaction.values[0] === 'safe') {
+  } else if (interaction.values[0] === 'safe') {
     embed = new EmbedBuilder()
       .setTitle('🛡️ المناطق الآمنة')
       .setColor(0x2b2d31)
@@ -136,12 +122,7 @@ client.on('interactionCreate', async interaction => {
 5. يمنع بيع أو تداول الممنوعات.
 6. يمنع الاحتماء بالمناطق الآمنة إلا حسب النظام.`
       );
-  }
-
-  // ===============================
-  // آلية الشكاوي
-  // ===============================
-  else if (interaction.values[0] === 'reports') {
+  } else if (interaction.values[0] === 'reports') {
     embed = new EmbedBuilder()
       .setTitle('📝 آلية الشكاوي')
       .setColor(0x2b2d31)
@@ -153,12 +134,7 @@ client.on('interactionCreate', async interaction => {
 5. احترام الإدارة أثناء الشكوى.
 6. الشكاوي بدون دليل تُرفض.`
       );
-  }
-
-  // ===============================
-  // قوانين المتجر
-  // ===============================
-  else if (interaction.values[0] === 'store') {
+  } else if (interaction.values[0] === 'store') {
     embed = new EmbedBuilder()
       .setTitle('🛒 قوانين المتجر')
       .setColor(0x2b2d31)
@@ -169,12 +145,7 @@ client.on('interactionCreate', async interaction => {
 4. الالتزام بشروط وأحكام المتجر.
 5. الإدارة غير مسؤولة عن أخطاء اللاعب.`
       );
-  }
-
-  // ===============================
-  // قوانين الدسكورد
-  // ===============================
-  else if (interaction.values[0] === 'discord') {
+  } else if (interaction.values[0] === 'discord') {
     embed = new EmbedBuilder()
       .setTitle('💬 قوانين الدسكورد')
       .setColor(0x2b2d31)
@@ -187,10 +158,7 @@ client.on('interactionCreate', async interaction => {
       );
   }
 
-  // ✅ الرد النهائي
-  await interaction.editReply({
-    embeds: [embed]
-  });
+  await interaction.editReply({ embeds: [embed] });
 });
 
 // ===============================
