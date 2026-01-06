@@ -294,6 +294,8 @@ client.on('interactionCreate', async interaction => {
 
 ●  يتم تسليمك الغرض في اقرب فرصه
 
+**__رابط المتجر__**
+> https://velron-cfw.zbooni.com/
 `);
   }
 
