@@ -32,11 +32,21 @@ const client = new Client({
 client.once('ready', async () => {
   console.log(`✅ Logged in as ${client.user.tag}`);
 
-  // 🔹 آيدي الروم اللي تنرسل فيه رسالة القوانين
-  const CHANNEL_ID =   '1457506347456270468',
-  '1371829941699612687';
+// 🔹 آيديات الرومات اللي تنرسل فيها رسالة القوانين
+const CHANNEL_IDS = [
+  '1457506347456270468',
+  '1371829941699612687'
+];
 
+for (const CHANNEL_ID of CHANNEL_IDS) {
   const channel = await client.channels.fetch(CHANNEL_ID);
+
+  await channel.send({
+    embeds: [mainEmbed],
+    components: [row]
+  });
+}
+
 
   // 🔹 الإيمبد الرئيسي
   const mainEmbed = new EmbedBuilder()
