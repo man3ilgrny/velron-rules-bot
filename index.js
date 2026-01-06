@@ -154,10 +154,10 @@ client.on('interactionCreate', async interaction => {
 `);
   }
 
-  // 🚓 قوانين الإجرام
+  // 💀 قوانين الإجرام
   else if (interaction.values[0] === 'crime') {
     embed = new EmbedBuilder()
-      .setTitle('🚓 قوانين الإجرام')
+      .setTitle('💀 قوانين الإجرام')
       .setColor(0xED4245)
       .setDescription(`
 **__تعريف الأجرام __**
